@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main implements Spec{
     // Properties
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     public void main(String[] args) {
         String name = askString("What is the player's name");
@@ -24,10 +24,7 @@ public class Main implements Spec{
     public Results  getResults(Game guessingOrBetter){
         return guessingOrBetter.getResults();
     }
-    public Person   makePerson(String name, int age, int height){
-        Player p = new Player(name, age, height);
-        return p;
-    }
+
     public Person makePerson(String name){
         Player p = new Player(name, askNumber("What is the player's age"), askNumber("What is the player's height"));
         return p;

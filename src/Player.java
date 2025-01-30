@@ -39,7 +39,14 @@ public class Player implements Person {
     public Results  getResults(){
         return this.results;
     }
-    public void setResults(Result newResults){
+    public void     setResults(Result newResults){
         this.results = newResults;
+    }
+    public void     climb(int up_value, int right_value){
+        for (int i = 0; i < 4; i++) {
+            for (int x = 0; x < 4; x++) {
+                
+            }
+        }
     }
 }
