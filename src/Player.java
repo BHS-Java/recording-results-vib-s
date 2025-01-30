@@ -6,9 +6,13 @@ public class Player implements Person {
     private Result  results = new Result();
 
     // Constructor
-    public Player(int height, int age) {
-        this.height = height;
-        this.age = age;
+    public Player(String name, int age, int height) {
+        setName(name);
+        setAge(age);
+        setHeight(height);
+    }
+    public Player(String name){
+        setName(name);
     }
 
     // Methods
@@ -20,8 +24,14 @@ public class Player implements Person {
     public String   getName(){
         return this.name;
     }
+    public void     setHeight(int height){
+        this.height = height;
+    }
     public int      getHeight(){
         return this.height;
+    }
+    public void setAge(int age){
+        this.age = age;
     }
     public int      getAge(){
         return this.age;
