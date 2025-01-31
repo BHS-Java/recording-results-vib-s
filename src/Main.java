@@ -5,8 +5,9 @@ public class Main implements Spec{
     private final Scanner scanner = new Scanner(System.in);
 
     public void main(String[] args) {
-        String name = askString("What is the player's name");
-        Person p = makePerson(name);
+
+        Player p2 = new Player("SDf");
+        p2.climb("down", "right");
     }
     
 

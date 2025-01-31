@@ -4,6 +4,12 @@ public class Player implements Person {
     private int     height;
     private int     age;
     private Result  results = new Result();
+    private final String[] directions = new String[]{
+        "up",
+        "down",
+        "left",
+        "right"
+    };
 
     // Constructor
     public Player(String name, int age, int height) {
@@ -42,11 +48,33 @@ public class Player implements Person {
     public void     setResults(Result newResults){
         this.results = newResults;
     }
-    public void     climb(int up_value, int right_value){
-        for (int i = 0; i < 4; i++) {
-            for (int x = 0; x < 4; x++) {
-                
+    public void     climb(String direction_vertical, String direction_horizontal){
+        if(direction_vertical.equals(this.directions[0])){
+            for (int i = 0; i < 4; i++) {
+                if(direction_horizontal.equals(this.directions[3])){
+                    for (int x = i; x < 4; x++){
+                        System.out.print(" ");
+                    }
+                }
+                for (int x = 0; x < i; x++) {
+                System.out.print("*");
+                }
+            System.out.println();
             }
+        } else if(direction_vertical.equals(this.directions[1])){
+            for (int i = 4; i > 0; i--) {
+                if(direction_horizontal.equals(this.directions[2])){
+                    for (int x = i; x < 4; x++){
+                        System.out.print(" ");
+                    }
+                }
+                for(int x = 1; x < i; x++){
+                    System.out.print("*");
+                } 
+                System.out.println();
+                }
+        } else{ System.out.println("Invalid Input ");}
+        System.out.println();
         }
     }
-}
+

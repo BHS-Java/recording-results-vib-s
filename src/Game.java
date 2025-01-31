@@ -1,16 +1,14 @@
 
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Game {
     // Properties 
     private Result  results;
     private ArrayList<Player> playerList;
-    private final String[] directions = new String[]{
-        "up",
-        "down",
-        "left",
-        "right"
-    };
+
 
     // Constructor
     public Game(){
@@ -42,12 +40,18 @@ public class Game {
             addPerson(person);
         }
     }
-    public void   getDirectionOfStair(String direction_v, String direction_h, Player dPlayer){
-        int up_value = 1;
-        int right_value = 1;
-        if(direction_v.equals(this.directions[1])) up_value *= -1;
-        if(direction_h.equals(this.directions[2])) right_value *= -1;
-        dPlayer.climb(up_value, right_value);
+    public ArrayList<Player>   loadPlayers() throws FileNotFoundException{
+        Scanner scanner = new Scanner(new File("/src/playerList.csv"));
+        Scanner scannerLine = new Scanner(scanner.nextLine());
+        ArrayList<Player> players = new ArrayList<Player>();
+
+        while(scanner.hasNextLine()){
+            String name = scannerLine.next();
+            int height = scannerLine.next();
+            int age = scannerLine.next();
+            players.add
+        }
+
     }
 
 }
