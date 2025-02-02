@@ -45,13 +45,20 @@ public class Game {
         Scanner scannerLine = new Scanner(scanner.nextLine());
         ArrayList<Player> players = new ArrayList<Player>();
 
+        int height;
+        int age;
+        String name;
         while(scanner.hasNextLine()){
-            String name = scannerLine.next();
-            int height = scannerLine.next();
-            int age = scannerLine.next();
-            players.add
+            name = scannerLine.next();
+            height = Integer.parseInt(scannerLine.next());
+            age = Integer.parseInt(scannerLine.next());
+            players.add(new Player(name, height, age));
         }
 
+        return players;
+    }
+    public void selectPlayer(Player p){
+        addPerson(p);
     }
 
 }
