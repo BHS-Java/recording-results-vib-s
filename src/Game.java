@@ -41,14 +41,15 @@ public class Game {
         }
     }
     public ArrayList<Player>   loadPlayers() throws FileNotFoundException{
-        Scanner scanner = new Scanner(new File("/src/playerList.csv"));
-        Scanner scannerLine = new Scanner(scanner.nextLine());
+        Scanner scanner = new Scanner(new File("src/playerList.csv"));
+        Scanner scannerLine;
         ArrayList<Player> players = new ArrayList<Player>();
 
         int height;
         int age;
         String name;
         while(scanner.hasNextLine()){
+            scannerLine = new Scanner(scanner.nextLine());
             name = scannerLine.next();
             height = Integer.parseInt(scannerLine.next());
             age = Integer.parseInt(scannerLine.next());
@@ -60,5 +61,7 @@ public class Game {
     public void selectPlayer(Player p){
         addPerson(p);
     }
-
+    public ArrayList<Player> getPlayers(){
+        return this.playerList;
+    }
 }

@@ -1,13 +1,17 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main implements Spec{
     // Properties
     private final Scanner scanner = new Scanner(System.in);
 
-    public void main(String[] args) {
+    public void main(String[] args) throws FileNotFoundException {
 
         Player p2 = new Player("SDf");
         p2.climb("down", "right");
+        Game game = new Game();
+        System.out.println(game.loadPlayers());
+        System.out.println(game.getPlayers());
     }
     
 
